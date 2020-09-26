@@ -1,8 +1,6 @@
 
 .topOffset {
-  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-.mt-0 {
-  margin-top: 0 !important;
-}
