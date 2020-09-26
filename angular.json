@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ReInform"
+    }
+  },
+  "defaultProject": "ReInform",
+  "cli": {
+    "analytics": false
+  }
 }
