@@ -14,11 +14,22 @@ export class GetDocsComponent implements OnInit {
   docs: Docs;
   info: Info;
   page: Pager;
+  localStorage: string = '';
 
   constructor(private router: Router, docs: Docs, info: Info, pager: Pager) {
     this.docs = docs;
     this.info = info;
     this.page = pager;
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+    }
+  }
+
+  ngOnInit(): void {
+    this.localStorage = localStorage.getItem('docs');
+    if (localStorage.getItem('docs') !== null) {
+      this.docs.allDocs = JSON.parse(this.localStorage);
+    }
   }
 
   gotoEditor(number) {
@@ -30,10 +41,6 @@ export class GetDocsComponent implements OnInit {
     this.docs.allDocs.push(this.docs.docTemplate);
     this.page.docNumber = this.docs.allDocs.length-1;
     this.router.navigate(['edit', this.page.docNumber+1]);
-  }
-
-  ngOnInit(): void {
-    // alert(JSON.stringify(this.docs.pageNumber));
   }
 
 }
