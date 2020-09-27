@@ -1,0 +1,68 @@
+<div class="container topOffset border-left border-right bg-white">
+  <h1 class="text-info">Правка документа №{{page.docNumber+1}}</h1>
+
+  <div class="row">
+
+    <div class="col-sm-12">
+      <div class="card" >
+        <div class="card-header bg-info text-white">
+          id: {{docs.allDocs[page.docNumber].id}}
+        </div>
+        <div class="card-body">
+          <div class="row">
+
+            <div class="col-sm-10">
+
+              <div class="input-group inputOffset">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Аккаунт</span>
+                </div>
+                <input type="text" [(ngModel)]="docs.allDocs[page.docNumber].author.account" class="form-control" placeholder="{{docs.allDocs[page.docNumber].author.account}}" >
+              </div>
+
+              <div class="input-group inputOffset">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">ФИО</span>
+                </div>
+                <input type="text" [(ngModel)]="docs.allDocs[page.docNumber].author.fio" class="form-control" placeholder="{{docs.allDocs[page.docNumber].author.fio}}" >
+              </div>
+
+
+              <div class="input-group inputOffset">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Квалификация</span>
+                </div>
+                <input type="text" [(ngModel)]="docs.allDocs[page.docNumber].author.post" class="form-control" placeholder="{{docs.allDocs[page.docNumber].author.post}}" >
+              </div>
+
+              <div class="input-group inputOffset">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Наименование</span>
+                </div>
+                <input type="text" [(ngModel)]="docs.allDocs[page.docNumber].docName" class="form-control" placeholder="{{docs.allDocs[page.docNumber].docName}}" >
+              </div>
+
+              <div class="input-group inputOffset">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Адресс</span>
+                </div>
+                <input type="text" [(ngModel)]="docs.allDocs[page.docNumber].address" class="form-control" placeholder="{{docs.allDocs[page.docNumber].address}}" >
+              </div>
+
+            </div>
+
+            <div class="col-sm-12">
+              <a routerLink="" (click)="saveInput()" class="btn btn-secondary float-right">Сохранить</a>
+              <a routerLink=""  class="btn"><<Назад</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+

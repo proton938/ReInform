@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Doctype } from './interfaces';
 
 @Injectable()
 
 export class Docs {
-  public 	pageNumber: any[] = [
+  allDocs: Doctype[] = [
     {
       id: 'yok0cpn5g7j0n1ck',
       author: {
@@ -36,4 +37,25 @@ export class Docs {
     }
   ];
 
+
+  docTemplate: Doctype =
+    {
+      id: '',
+      author: {
+        account: '',
+        fio: '',
+        post: ''
+      },
+      docCode: '',
+      docDate: '',
+      docName: '',
+      docType: '',
+      address: '',
+      status: '',
+      isSpecial: false
+    }
+  ;
+
 }
+
+

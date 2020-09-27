@@ -1,12 +1,12 @@
 
 <div class="container topOffset border-left border-right bg-white">
   <h1 class="text-info">Список документов</h1>
-
+  <h2>{{docs.allDocs.length}}</h2>
   <div class="row">
 
     <div class="col-sm-8">
-      <div class="card" *ngFor="let getDocs of docs.pageNumber">
-        <div class="card-header bg-info">
+      <div class="card" *ngFor="let getDocs of docs.allDocs; let i=index;">
+        <div class="card-header bg-info ">
         </div>
         <div class="card-body">
           <div class="row">
@@ -17,11 +17,12 @@
             <div class="col-sm-7">
               <p>{{getDocs.docName}}</p>
               <p>{{getDocs.address}}</p>
-              <a href="#" class="btn btn-primary float-right">Править</a>
+              <a (click)="gotoEditor(i)" class="btn btn-secondary float-right ">Править</a>
             </div>
           </div>
         </div>
       </div>
+      <button type="button" (click)="createDocument()" class="btn btn-secondary btn-lg btn-block">Добавить документ</button>
     </div>
 
     <div class="col-sm-4" >
