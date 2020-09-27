@@ -29,6 +29,8 @@ export class GetDocsComponent implements OnInit {
     this.localStorage = localStorage.getItem('docs');
     if (localStorage.getItem('docs') !== null) {
       this.docs.allDocs = JSON.parse(this.localStorage);
+    } else {
+      localStorage.setItem('docs', JSON.stringify(this.docs.allDocs));
     }
   }
 
